@@ -23,6 +23,7 @@ public class Logout extends BaseTest{
 		tp2.Logutbutton();
 		TimelinePage tp3 = new TimelinePage(driver);
 		tp3.afterlogout();
+		//wd
 	}
 
 }
