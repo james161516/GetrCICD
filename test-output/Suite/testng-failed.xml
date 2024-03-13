@@ -9,10 +9,43 @@
       <class name="Getr.test.LogoutUsingDataProvider">
         <methods>
           <include name="Landingpage"/>
-          <include name="Logout" invocation-numbers="0 1"/>
+          <include name="Logout"/>
           <include name="closedriver"/>
         </methods>
       </class> <!-- Getr.test.LogoutUsingDataProvider -->
     </classes>
   </test> <!-- Logout2(failed) -->
+  <test thread-count="5" parallel="tests" name="Login(failed)">
+    <classes>
+      <class name="Getr.test.LogintoGettr">
+        <methods>
+          <include name="Landingpage"/>
+          <include name="LoginToApplication"/>
+          <include name="closedriver"/>
+        </methods>
+      </class> <!-- Getr.test.LogintoGettr -->
+    </classes>
+  </test> <!-- Login(failed) -->
+  <test thread-count="5" parallel="tests" name="SearchUser(failed)">
+    <classes>
+      <class name="Getr.test.SearchUser">
+        <methods>
+          <include name="Landingpage"/>
+          <include name="closedriver"/>
+          <include name="SearchUser"/>
+        </methods>
+      </class> <!-- Getr.test.SearchUser -->
+    </classes>
+  </test> <!-- SearchUser(failed) -->
+  <test thread-count="5" parallel="tests" name="LogOut(failed)">
+    <classes>
+      <class name="Getr.test.Logout">
+        <methods>
+          <include name="Landingpage"/>
+          <include name="Logout"/>
+          <include name="closedriver"/>
+        </methods>
+      </class> <!-- Getr.test.Logout -->
+    </classes>
+  </test> <!-- LogOut(failed) -->
 </suite> <!-- Failed suite [Suite] -->

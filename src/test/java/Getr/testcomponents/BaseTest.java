@@ -7,10 +7,12 @@ import java.time.Duration;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -29,9 +31,15 @@ public class BaseTest {
 	FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\java\\Getr\\Resources\\Globaldata.properties");
 	prop.load(fis);
 	String browsername = prop.getProperty("browser");
-	if (browsername.equalsIgnoreCase("chrome"))
+	if (browsername.contains("chrome"))
 	{
-		 driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		if (browsername.contains("headless"))
+		{
+			options.addArguments("headless");
+		}
+		 driver = new ChromeDriver(options);
+		 driver.manage().window().setSize(new Dimension(1440,900));
 		
 	}
 	else if (browsername.equalsIgnoreCase("Firefox"))

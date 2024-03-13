@@ -38,7 +38,7 @@ public class LogoutUsingDataProvider extends BaseTest{
 		
 		HashMap<String, String> map1 = new HashMap<String, String>();
 		map1.put("username", "john0208");
-		map1.put("password", "Indium1");
+		map1.put("password", "Indium");
 		map1.put("Displayname", "megzz1615");
 		
 		return new Object[][]  { {map}, {map1}};
